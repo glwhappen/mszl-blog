@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: blog # 应用名称
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver # 数据库驱动
+    name: defaultDataSource # 数据源名称
+    url: jdbc:mysql://localhost:3306/api?serverTimezone=UTC # 数据库连接地址
+    username: root # 数据库用户名
+    password: root # 数据库密码：
+
+server:
+  port: 8081 # 应用服务 WEB 访问端口
+
+
