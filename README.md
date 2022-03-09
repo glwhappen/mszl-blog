@@ -87,7 +87,7 @@ resources
 - [x] [P7. 首页-最热文章](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=7)
 - [x] [P8. 首页-最新文章](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=8)
 - [x] [P9. 首页-文章归档](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=9)
-- [ ] [P10. 登录JWT技术](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=10)
+- [x] [P10. 登录JWT技术](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=10)
 - [ ] [P11. 登录功能](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=11)
 - [ ] [P12. 登录后获取用户信息](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=12)
 - [ ] [P13. 退出登录](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=13)
