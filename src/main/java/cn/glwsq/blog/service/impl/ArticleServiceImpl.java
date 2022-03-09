@@ -68,6 +68,18 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
         return Result.success(copyList(articles, false, false));
     }
 
+    @Override
+    public Result newArticle(int limit) {
+        LambdaQueryWrapper<Article> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.orderByDesc(Article::getCreateDate);
+        queryWrapper.select(Article::getId,Article::getTitle);
+        queryWrapper.last("limit " + limit);
+        List<Article> articles = articleMapper.selectList(queryWrapper);
+
+
+        return Result.success(copyList(articles, false, false));
+    }
+
     private List<ArticleVo> copyList(List<Article> records, boolean isTag, boolean isAuthor ) {
         List<ArticleVo> articleVoList = new ArrayList<>();
         for (Article record : records) {

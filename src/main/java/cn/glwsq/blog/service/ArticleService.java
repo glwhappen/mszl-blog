@@ -19,4 +19,6 @@ public interface ArticleService extends IService<Article> {
     public Result listArticle(PageParams pageParams);
 
     Result hotArticle(int limit);
+
+    Result newArticle(int limit);
 }
