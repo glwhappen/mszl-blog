@@ -1,6 +1,7 @@
 package cn.glwsq.blog.service.impl;
 
 import cn.glwsq.blog.domain.SysUser;
+import cn.glwsq.blog.dos.Archives;
 import cn.glwsq.blog.service.SysUserService;
 import cn.glwsq.blog.service.TagService;
 import cn.glwsq.blog.vo.ArticleVo;
@@ -78,6 +79,12 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
 
 
         return Result.success(copyList(articles, false, false));
+    }
+
+    @Override
+    public Result listArchives() {
+        List<Archives> archivesList =  articleMapper.listArchives();
+        return Result.success(archivesList);
     }
 
     private List<ArticleVo> copyList(List<Article> records, boolean isTag, boolean isAuthor ) {

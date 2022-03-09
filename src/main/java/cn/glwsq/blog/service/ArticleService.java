@@ -18,7 +18,23 @@ public interface ArticleService extends IService<Article> {
      */
     public Result listArticle(PageParams pageParams);
 
+    /**
+     * 最热文章
+     * @param limit
+     * @return
+     */
     Result hotArticle(int limit);
 
+    /**
+     * 最新文章
+     * @param limit
+     * @return
+     */
     Result newArticle(int limit);
+
+    /**
+     * 文章归档
+     * @return
+     */
+    Result listArchives();
 }

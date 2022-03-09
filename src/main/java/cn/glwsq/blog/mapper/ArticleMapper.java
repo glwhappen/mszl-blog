@@ -1,7 +1,10 @@
 package cn.glwsq.blog.mapper;
 
 import cn.glwsq.blog.domain.Article;
+import cn.glwsq.blog.dos.Archives;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+import java.util.List;
 
 /**
 * @author happen
@@ -10,6 +13,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity cn.glwsq.blog.domain.Article
 */
 public interface ArticleMapper extends BaseMapper<Article> {
+
+    List<Archives> listArchives();
 
 }
 

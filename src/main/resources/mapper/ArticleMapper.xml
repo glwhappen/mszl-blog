@@ -23,4 +23,7 @@
         weight,author_id,body_id,
         category_id
     </sql>
+    <select id="listArchives" resultType="cn.glwsq.blog.dos.Archives">
+        select FROM_UNIXTIME(create_date/1000,'%Y') as year,FROM_UNIXTIME(create_date/1000,'%m') as month,count(*) as count from ms_article group by year,month
+    </select>
 </mapper>
