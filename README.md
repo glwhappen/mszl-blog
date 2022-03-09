@@ -82,7 +82,7 @@ resources
     3. service层，逻辑处理层
     4. 和resources下的mapper.xml
 - [x] [P4. 首页文章列表实现-2](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=4)
-- [ ] [P5. 首页-最热标签](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=5)
+- [x] [P5. 首页-最热标签](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=5)
 - [ ] [P6. 统一异常处理](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=6)
 - [ ] [P7. 首页-最热文章](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=7)
 - [ ] [P8. 首页-最新文章](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=8)

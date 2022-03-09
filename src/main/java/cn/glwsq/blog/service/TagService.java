@@ -1,6 +1,7 @@
 package cn.glwsq.blog.service;
 
 import cn.glwsq.blog.domain.Tag;
+import cn.glwsq.blog.vo.Result;
 import cn.glwsq.blog.vo.TagVo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,6 @@ import java.util.List;
 */
 public interface TagService extends IService<Tag> {
     List<TagVo> findTagsByArticleId(Long articleId);
+
+    Result hots(int limit);
 }
