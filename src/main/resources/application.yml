@@ -11,4 +11,10 @@ spring:
 server:
   port: 8081 # 应用服务 WEB 访问端口
 
-
+# mybatis-plus
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 打印日志
+  global-config:
+    db-config:
+      table-prefix: ms_ # 数据库表前缀
