@@ -22,4 +22,14 @@ public class ArticleController {
     public Result listArticle(@RequestBody PageParams pageParams) {
         return articleService.listArticle(pageParams);
     }
+
+    /**
+     * 首页最热文章
+     * @return
+     */
+    @PostMapping("hot")
+    public Result hotArticle() {
+        int limit = 5;
+        return articleService.hotArticle(limit);
+    }
 }

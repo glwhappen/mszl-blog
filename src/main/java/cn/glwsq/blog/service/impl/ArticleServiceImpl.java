@@ -52,14 +52,26 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
         List<Article> records = articlePage.getRecords();
         // 数据库中查询到的数据不能直接返回给前端
         // 需要数据转换 可以用tream
-        List<ArticleVo> articleVoList = copyList(records);
+        List<ArticleVo> articleVoList = copyList(records, true, true);
         return Result.success(articleVoList);
     }
 
-    private List<ArticleVo> copyList(List<Article> records) {
+    @Override
+    public Result hotArticle(int limit) {
+        LambdaQueryWrapper<Article> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.orderByDesc(Article::getViewCounts);
+        queryWrapper.select(Article::getId,Article::getTitle);
+        queryWrapper.last("limit " + limit);
+        List<Article> articles = articleMapper.selectList(queryWrapper);
+
+
+        return Result.success(copyList(articles, false, false));
+    }
+
+    private List<ArticleVo> copyList(List<Article> records, boolean isTag, boolean isAuthor ) {
         List<ArticleVo> articleVoList = new ArrayList<>();
         for (Article record : records) {
-            articleVoList.add(copy(record, true, true));
+            articleVoList.add(copy(record, isTag, isAuthor));
         }
         return articleVoList;
     }
