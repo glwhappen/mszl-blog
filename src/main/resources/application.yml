@@ -7,7 +7,9 @@ spring:
     url: jdbc:mysql://localhost:3306/api?serverTimezone=UTC # 数据库连接地址
     username: root # 数据库用户名
     password: root # 数据库密码：
-
+  redis:
+    host: localhost
+    port: 6379
 server:
   port: 8081 # 应用服务 WEB 访问端口
 
@@ -18,3 +20,4 @@ mybatis-plus:
   global-config:
     db-config:
       table-prefix: ms_ # 数据库表前缀
+

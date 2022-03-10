@@ -1,5 +1,6 @@
 package cn.glwsq.blog.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.glwsq.blog.domain.SysUser;
 import cn.glwsq.blog.service.SysUserService;
@@ -28,6 +29,16 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser>
             sysUser.setNickname("无名氏");
         }
         return sysUser;
+    }
+
+    @Override
+    public SysUser findUser(String account, String password) {
+        LambdaQueryWrapper<SysUser> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(SysUser::getAccount, account);
+        queryWrapper.eq(SysUser::getPassword, password);
+        queryWrapper.select(SysUser::getAccount, SysUser::getId, SysUser::getAvatar, SysUser::getNickname);
+        queryWrapper.last("limit 1");
+        return sysUserMapper.selectOne(queryWrapper);
     }
 }
 

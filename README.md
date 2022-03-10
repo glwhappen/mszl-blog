@@ -2,6 +2,7 @@
 
 一个博客的练手项目
 视频地址：https://www.bilibili.com/video/BV1Gb4y1d7zb
+项目资料：https://www.glwsq.cn/springboot-vue-mszl-blog/
 
 ## 用到的依赖
 
@@ -88,7 +89,16 @@ resources
 - [x] [P8. 首页-最新文章](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=8)
 - [x] [P9. 首页-文章归档](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=9)
 - [x] [P10. 登录JWT技术](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=10)
-- [ ] [P11. 登录功能](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=11)
+- [x] [P11. 登录功能](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=11)
+  - 登录，用的jsonwebtoken
+  - 登录成功以后会给前台返回token
+  - 登录流程
+    1. 检查参数是否合法
+    2. 根据用户名和密码去user表中查询
+    3. 如果不存在 登录失败
+    4. 如果存在 使用 jwt 生成 token 返回给前端
+    5. token放入redis当中 redis 有 token : user之间的信息 设置过期时间
+    （登录认证的时候 先认证token字符串是否合法，去redis认证是否存在）
 - [ ] [P12. 登录后获取用户信息](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=12)
 - [ ] [P13. 退出登录](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=13)
 - [ ] [P14. 注册功能](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=14)

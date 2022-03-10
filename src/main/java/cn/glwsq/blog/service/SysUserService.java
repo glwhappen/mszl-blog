@@ -10,4 +10,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface SysUserService extends IService<SysUser> {
     SysUser findUserById(Long id);
+
+    SysUser findUser(String account, String password);
 }
