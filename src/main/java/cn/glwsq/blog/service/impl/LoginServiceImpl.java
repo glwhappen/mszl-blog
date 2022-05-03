@@ -14,6 +14,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.apache.commons.codec.digest.DigestUtils;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -48,7 +49,24 @@ public class LoginServiceImpl implements LoginService {
             return Result.fail(ErrorCode.ACCOUNT_PWD_NOT_EXIST.getCode(), ErrorCode.ACCOUNT_PWD_NOT_EXIST.getMsg());
         }
         String token = JWTUtils.createToken(sysUser.getId());
-        redisTemplate.opsForValue().set("TOKEN" + token, JSON.toJSONString(sysUser), 1, TimeUnit.DAYS);
+        redisTemplate.opsForValue().set("TOKEN_" + token, JSON.toJSONString(sysUser), 1, TimeUnit.DAYS);
         return Result.success(token);
+    }
+
+    @Override
+    public SysUser checkToken(String token) {
+        if(StringUtils.isBlank(token)) {
+            return null;
+        }
+        Map<String, Object> stringObjectMap =  JWTUtils.checkToken(token);
+        if(stringObjectMap == null) {
+            return null;
+        }
+        String userJson = redisTemplate.opsForValue().get("TOKEN_" + token);
+        if(StringUtils.isBlank(userJson)) {
+            return null;
+        }
+        SysUser sysUser = JSON.parseObject(userJson, SysUser.class);
+        return sysUser;
     }
 }

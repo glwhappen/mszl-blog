@@ -1,6 +1,7 @@
 package cn.glwsq.blog.service;
 
 import cn.glwsq.blog.domain.SysUser;
+import cn.glwsq.blog.vo.Result;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -12,4 +13,11 @@ public interface SysUserService extends IService<SysUser> {
     SysUser findUserById(Long id);
 
     SysUser findUser(String account, String password);
+
+    /**
+     * 根据token查询用户信息
+     * @param token
+     * @return
+     */
+    Result findUserByToken(String token);
 }

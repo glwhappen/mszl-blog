@@ -1,5 +1,6 @@
 package cn.glwsq.blog.service;
 
+import cn.glwsq.blog.domain.SysUser;
 import cn.glwsq.blog.vo.Result;
 import cn.glwsq.blog.vo.params.LoginParams;
 
@@ -10,4 +11,6 @@ public interface LoginService {
      * @return
      */
     Result login(LoginParams loginParams);
+
+    SysUser checkToken(String token);
 }
