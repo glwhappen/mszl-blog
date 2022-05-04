@@ -5,6 +5,7 @@ import cn.glwsq.blog.vo.ErrorCode;
 import cn.glwsq.blog.vo.LoginUserVo;
 import cn.glwsq.blog.vo.Result;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.glwsq.blog.domain.SysUser;
 import cn.glwsq.blog.service.SysUserService;
@@ -70,6 +71,21 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser>
 
         return Result.success(loginUserVo);
     }
+
+    @Override
+    public SysUser findUserByAccount(String account) {
+        LambdaQueryWrapper<SysUser> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(SysUser::getAccount, account);
+        queryWrapper.last("limit 1");
+        return this.sysUserMapper.selectOne(queryWrapper);
+    }
+
+//    public void save(SysUser sysUser) {
+//        // 保存用户这id会自动生成
+//        // 这个地方默认生成的id是分布式id 雪花算法
+//        // mybatis-plus框架会这样
+//        this.sysUserMapper.insert(sysUser);
+//    }
 }
 
 

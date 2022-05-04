@@ -101,7 +101,7 @@ resources
     （登录认证的时候 先认证token字符串是否合法，去redis认证是否存在）
 - [x] [P12. 登录后获取用户信息](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=12)
 - [x] [P13. 退出登录](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=13)
-- [ ] [P14. 注册功能](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=14)
+- [x] [P14. 注册功能](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=14)
 - [ ] [P15. 登录拦截器](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=15)
 - [ ] [P16. ThreadLocal保存登录用户信息](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=16)
 - [ ] [P17. ThreadLocal内存泄漏](https://www.bilibili.com/video/BV1Gb4y1d7zb?p=17)

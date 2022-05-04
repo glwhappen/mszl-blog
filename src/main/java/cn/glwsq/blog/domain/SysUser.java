@@ -17,7 +17,7 @@ public class SysUser implements Serializable {
     /**
      * 
      */
-    @TableId(type = IdType.AUTO)
+//    @TableId(type = IdType.AUTO) // 默认是IdType.ASSIGN_ID
     private Long id;
 
     /**
